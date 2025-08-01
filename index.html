@@ -137,6 +137,19 @@
 
     </div>
   </section>
+  
+<!-- Contador de visitas -->
+<div style="text-align:center; margin-top:20px;">
+  <p>Visitas: <span id="visitas"></span></p>
+</div>
+
+<script>
+  fetch('https://api.countapi.xyz/update/primatesdecolombia/githubpage/?amount=1')
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById('visitas').innerText = res.value;
+    });
+</script>
 
   <!-- Pie de página -->
   <footer class="bg-dark text-white text-center py-3">
