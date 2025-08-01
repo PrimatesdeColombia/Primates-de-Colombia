@@ -1,0 +1,6 @@
+# Crear estructura de carpetas
+mkdir -p assets/img/aotus_brumbacki assets/maps/aotusbrumbacki
+
+# Crear archivos .gitkeep en cada carpeta para que Git los registre aunque estén vacías
+touch assets/img/aotus_brumbacki/.gitkeep
+touch assets/maps/aotus_brumbacki/.gitkeep
