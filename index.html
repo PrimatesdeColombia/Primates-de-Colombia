@@ -26,6 +26,38 @@
       font-weight: bold;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -54,19 +86,16 @@
   <!-- Introducción -->
   <section class="container my-5">
     <h2>¿Qué primates hay en Colombia?</h2>
-    <p>Colombia es uno de los países con mayor diversidad de primates en el mundo, albergando más de 40 especies distribuidas en distintos ecosistemas que van desde las selvas húmedas del Amazonas y el Chocó hasta los bosques secos tropicales y las montañas andinas. Estos primates pertenecen a cinco familias principales: Aotidae, Atelidae, Callitrichidae, Cebidae y Pitheciidae. Su morfología, comportamiento y adaptaciones varían notablemente: algunos son frugívoros y dispersores clave de semillas, otros insectívoros especializados; algunos son arbóreos extremos, otros se adaptan a la vida en el suelo en zonas intervenidas. Su actividad puede ser diurna o nocturna, y muestran altos grados de complejidad social y comportamientos culturales.
-  </p>
-
-  <p>
-La presencia de primates es un indicador de la salud ecológica de los bosques y su conservación es crucial para el equilibrio de los ecosistemas tropicales. Al ser grandes dispersores de semillas, participan activamente en la regeneración del bosque, ayudando a mantener la diversidad vegetal. También son presas y depredadores en múltiples redes tróficas, lo que los convierte en piezas fundamentales de la biodiversidad. Más allá de su función ecológica, los primates poseen un enorme valor cultural y científico: comparten un ancestro común con los seres humanos, y su estudio ha permitido comprender aspectos clave de la evolución, el comportamiento social, la cognición y la salud. Sin embargo, enfrentan múltiples amenazas como la pérdida de hábitat, la fragmentación de bosques, el tráfico ilegal y enfermedades zoonóticas. Su conservación no solo protege a estas especies fascinantes, sino que también garantiza el bienestar de los ecosistemas que sustentan la vida en las regiones más biodiversas de Colombia</p>
- </p>
+    <p>Colombia es uno de los países con mayor diversidad de primates en el mundo, albergando más de 40 especies distribuidas en distintos ecosistemas que van desde las selvas húmedas del Amazonas y el Chocó hasta los bosques secos tropicales y las montañas andinas. Estos primates pertenecen a cinco familias principales: Aotidae, Atelidae, Callitrichidae, Cebidae y Pitheciidae. Su morfología, comportamiento y adaptaciones varían notablemente: algunos son frugívoros y dispersores clave de semillas, otros insectívoros especializados; algunos son arbóreos extremos, otros se adaptan a la vida en el suelo en zonas intervenidas. Su actividad puede ser diurna o nocturna, y muestran altos grados de complejidad social y comportamientos culturales.</p>
+    <p>La presencia de primates es un indicador de la salud ecológica de los bosques y su conservación es crucial para el equilibrio de los ecosistemas tropicales. Al ser grandes dispersores de semillas, participan activamente en la regeneración del bosque, ayudando a mantener la diversidad vegetal. También son presas y depredadores en múltiples redes tróficas, lo que los convierte en piezas fundamentales de la biodiversidad. Más allá de su función ecológica, los primates poseen un enorme valor cultural y científico: comparten un ancestro común con los seres humanos, y su estudio ha permitido comprender aspectos clave de la evolución, el comportamiento social, la cognición y la salud. Sin embargo, enfrentan múltiples amenazas como la pérdida de hábitat, la fragmentación de bosques, el tráfico ilegal y enfermedades zoonóticas. Su conservación no solo protege a estas especies fascinantes, sino que también garantiza el bienestar de los ecosistemas que sustentan la vida en las regiones más biodiversas de Colombia.</p>
   </section>
 
   <!-- Listado por familias -->
   <section class="container my-5">
     <h2>Familias</h2>
     <div class="accordion" id="familiasAccordion">
-<!-- Aotidae -->
+
+      <!-- Aotidae -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingAotidae">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAotidae">
@@ -75,15 +104,15 @@ La presencia de primates es un indicador de la salud ecológica de los bosques y
         </h2>
         <div id="collapseAotidae" class="accordion-collapse collapse" data-bs-parent="#familiasAccordion">
           <div class="accordion-body">
-            <ul>            
-              <li><a href="#">Aotus brumbacki</a></li>
-              <li><a href="#">Aotus griseimembra</a></li>
-              <li><a href="#">Aotus jorgehernandezi</a></li>
-              <li><a href="#">Aotus lemurinus</a></li>
-              <li><a href="#">Aotus nancymaae</a></li>
-              <li><a href="#">Aotus trivirgatus</a></li>
-              <li><a href="#">Aotus vociferans</a></li>
-              <li><a href="#">Aotus zonalis</a></li>
+            <ul>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus brumbacki</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus griseimembra</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus jorgehernandezi</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus lemurinus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus nancymaae</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus trivirgatus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus vociferans</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Aotus zonalis</em></a></li>                        
             </ul>
           </div>
         </div>
@@ -99,16 +128,17 @@ La presencia de primates es un indicador de la salud ecológica de los bosques y
         <div id="collapseAtelidae" class="accordion-collapse collapse" data-bs-parent="#familiasAccordion">
           <div class="accordion-body">
             <ul>
-              <li><a href="#">Alouatta palliata</a></li>
-              <li><a href="#">Alouatta seniculus</a></li>
-              <li><a href="#">Ateles belzebuth</a></li>
-              <li><a href="#">Ateles fusciceps</a></li>
-              <li><a href="#">Ateles hybridus</a></li>
-              <li><a href="#">Lagotrix lagotricha</a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Alouatta palliata</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Alouatta seniculus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Ateles belzebuth</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Ateles fusciceps</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Ateles hybridus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Lagotrix lagotricha</em></a></li>                     
             </ul>
           </div>
         </div>
       </div>
+
 
         <!-- Callitrichidae -->
       <div class="accordion-item">
@@ -120,20 +150,21 @@ La presencia de primates es un indicador de la salud ecológica de los bosques y
         <div id="collapseCallitrichidae" class="accordion-collapse collapse" data-bs-parent="#familiasAccordion">
           <div class="accordion-body">
             <ul>
-              <li><a href="#">Callimico goeldii</a></li>
-              <li><a href="#">Cebuella pygmaea</a></li>  
-              <li><a href="#">Callithrix jacchus</a></li>
-              <li><a href="#">Leontocebus fuscus</a></li>
-              <li><a href="#">Leontocebus nigricollis</a></li>
-              <li><a href="#">Oedipomidas geoffroyi</a></li>
-              <li><a href="#">Oedipomidas inustus</a></li>
-              <li><a href="#">Oedipomidas leucopus</a></li>
-              <li><a href="#">Oedipomidas oedipus</a></li>
+               <ul>
+              <li><a href="#" onclick="openModal('aotus')"><em>Callimico goeldii</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebuella pygmaea</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Callithrix jacchus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Leontocebus fuscus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Leontocebus nigricollis</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Oedipomidas geoffroyi</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Oedipomidas inustus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Oedipomidas leucopus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Oedipomidas oedipus</em></a></li>   
             </ul>
           </div>
         </div>
       </div>
-      
+             
  <!-- Cebidae -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingCebidae">
@@ -144,17 +175,18 @@ La presencia de primates es un indicador de la salud ecológica de los bosques y
         <div id="collapseCebidae" class="accordion-collapse collapse show" data-bs-parent="#familiasAccordion">
           <div class="accordion-body">
             <ul>
-              <li><a href="#">Cebus albifrons</a></li>
-              <li><a href="#">Cebus capuccinus</a></li>
-              <li><a href="#">Cebus leucocephalus</a></li>
-              <li><a href="#">Cebus maltiosus</a></li>
-              <li><a href="#">Cebus versicolor</a></li>
-              <li><a href="#">Saimiri Saimiri cassiquiarensis</a></li>
-              <li><a href="#">Sapajus apella</a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebus albifrons</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebus capuccinus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebus leucocephalus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebus maltiosus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cebus versicolor</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Saimiri cassiquiarensis</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Sapajus apella</em></a></li>  
             </ul>
           </div>
         </div>
       </div>
+     
       
 <!-- Pithecidae -->
             <div class="accordion-item">
@@ -166,19 +198,19 @@ La presencia de primates es un indicador de la salud ecológica de los bosques y
         <div id="collapsePithecidae" class="accordion-collapse collapse show" data-bs-parent="#familiasAccordion">
           <div class="accordion-body">
             <ul>
-              <li><a href="#">Cheracebus lucifer</a></li>
-              <li><a href="#">Cheracebus lugens</a></li>
-              <li><a href="#">Cheracebus medemi</a></li>
-              <li><a href="#">Cacajao melanocephalus</a></li>
-              <li><a href="#">Pithecia hirsuta</a></li>
-              <li><a href="#">Pithecia milleri</a></li>
-              <li><a href="#">Plecturocebus caquetensis</a></li>
-              <li><a href="#">Plecturocebus discolors</a></li>
-              <li><a href="#">Plecturocebus ornatus</a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cheracebus lucifer</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cheracebus lugens</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cheracebus medemi</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Cacajao melanocephalus</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Pithecia hirsuta</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Pithecia milleri</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Plecturocebus caquetensis</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Plecturocebus discolors</em></a></li>
+              <li><a href="#" onclick="openModal('aotus')"><em>Plecturocebus ornatus</em></a></li>  
             </ul>
           </div>
         </div>
-      </div>
+      </div>              
 
   </section>
   
